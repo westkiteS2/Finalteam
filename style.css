@@ -1,0 +1,225 @@
+
+/* header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: relative;
+}
+
+.navbar_logo a{
+  color: #3f3f3f;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* 전체적인 페이지 구성 디자인 */
+html {
+  width: 100%;
+  position: relative;
+  background-color: #ededed;
+}
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  margin: 120px 0;
+}
+
+
+/* main page */
+.container {
+    height: 450px;
+    width: auto;
+    margin: 0 150px;
+    background-color: rgba(240, 240, 240, 0.8);
+    border-radius: 20px;
+    margin-bottom: 100px;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.2);
+}
+
+.container > .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background-color: #636363;
+    border-radius: 20px 20px 0 0;
+}
+
+.circle li {
+    display: inline-block;
+    text-decoration: no;
+    margin-right: 8px;
+}
+
+.exit img{
+    padding-right: 8px;
+}
+
+.cont-intro {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.txt-title {
+  width: auto;
+  margin-top: 30px;
+  font-size: 55px;
+  color: #f0c800;
+  line-height: 58px;
+}
+
+.btn-group {
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.btn-group.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #1e6ec4;
+  transform: translateY(-5px);
+}
+
+button a {
+  color: white;
+  text-decoration: none;
+}
+
+.hidden {
+  display: none;
+}
+
+
+/* work page */
+.section {
+    height: auto;
+    width: auto;
+    margin: 0 200px;
+    background-color: rgba(240, 240, 240, 0.8);
+    border-radius: 20px;
+}
+
+h2 {
+      cursor: pointer;
+      background: #34495e;
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      transition: background 0.3s;
+}
+
+h2:hover {
+      background: #2c3e50;
+}
+
+.content {
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+      transform: translateY(20px);
+      transition:
+        opacity 0.5s ease,
+        transform 0.5s ease,
+        max-height 0.6s ease;
+      margin: 10px 0;
+      padding: 0 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.content.visible {
+      opacity: 1;
+      transform: translateY(0);
+      max-height: none;
+      padding: 20px;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.6s ease, opacity 0.4s ease;
+  opacity: 0;
+}
+
+.accordion.open .accordion-content {
+  max-height: 1000px; /* 충분히 큰 값으로 설정 */
+  opacity: 1;
+}
+
+
+#scroll {
+    cursor: pointer;
+}
+
+#scroll:hover {
+    color: #636363;
+}
+
+table {
+      width: 100%;
+      margin-top: 20px;
+}
+
+th, td {
+      padding: 14px 20px;
+      border: 1px solid #ccc;
+      background: white;
+}
+
+th {
+      background-color: #2e86de;
+      color: white;
+}
+
+thead tr, tbody tr {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+
+.visible {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
