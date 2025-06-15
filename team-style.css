@@ -1,0 +1,292 @@
+/* header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  position: relative;
+}
+
+.navbar_logo a {
+  color: #3f3f3f;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* 기본 설정 */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  font-family: 'Noto Sans KR', sans-serif;
+  color: #111;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+/* INTRO 섹션 */
+.intro-section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  scroll-snap-align: start;
+  border-bottom: 1px solid #eee;
+}
+
+.intro-text {
+  text-align: center;
+}
+
+.main-title {
+  font-size: 4rem;
+  color: #111;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.sub-title {
+  font-size: 1.5rem;
+  color: #555;
+  font-weight: 400;
+  margin-top: 20px;
+  letter-spacing: 1px;
+}
+
+/* 각 팀원 섹션: 한 화면에 한 명 */
+.team-section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  scroll-snap-align: start;
+  padding: 0 10%;
+  box-sizing: border-box;
+  transition: background 0.6s ease;
+}
+
+/* 좌우 교차 배치 */
+.team-member {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  gap: 60px;
+}
+
+.team-member.reverse {
+  flex-direction: row-reverse;
+}
+
+.member-photo {
+  width: 40%;
+  max-width: 350px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.member-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 20px;
+}
+
+.member-info {
+  width: 60%;
+}
+
+.member-info .name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.member-info .links {
+  font-size: 0.85rem;
+  line-height: 2;
+}
+
+.member-info .links a {
+  color: #000;
+  text-decoration: none;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 2px;
+  transition: color 0.3s, border 0.3s;
+}
+
+.member-info .links a:hover {
+  color: #333;
+  border-color: #000;
+}
+
+/* 부드러운 등장 애니메이션 */
+.team-member {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 1s ease-out forwards;
+}
+
+.team-member:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.team-member:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.team-member:nth-child(3) {
+  animation-delay: 0.7s;
+}
+.team-member:nth-child(4) {
+  animation-delay: 1s;
+}
+.team-member:nth-child(5) {
+  animation-delay: 1.3s;
+}
+
+.color1 {
+  background: linear-gradient(to bottom, #ffffff, #fbe2fe);
+}
+
+.color2 {
+  background: linear-gradient(to bottom, #fbe2fe, #e6edfa);
+}
+
+.color3 {
+  background: linear-gradient(to bottom, #e6edfa, #e6ffec);
+}
+
+.color4 {
+  background: linear-gradient(to bottom, #e6ffec, #b1a6a0);
+}
+
+.color5 {
+  background: linear-gradient(to bottom, #b1a6a0, #ffffff);
+}
+
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 30px;
+  border: none;
+  background-color: rgba(240, 240, 240, 0.5);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-10px);
+}
+
+button a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+body {
+  opacity: 0;
+  animation: fadeInBody 2.5s ease-in forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeInBody {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.team-member {
+  animation: slideFadeUp 1s ease forwards;
+  opacity: 0;
+}
+
+.team-member:not(.reverse) .member-info {
+  text-align: right;
+  margin-left: auto;
+}
+
+/* 태블릿 이하 (max-width: 992px) */
+@media (max-width: 992px) {
+  .team-member {
+    flex-direction: column !important;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .member-photo {
+    width: 70%;
+    max-width: 250px;
+  }
+
+  .member-info {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center !important;
+  }
+
+  .member-info .name {
+    font-size: 1.3rem;
+  }
+
+  .member-info .links {
+    font-size: 0.9rem;
+  }
+}
+
+/* 모바일 (max-width: 576px) */
+@media (max-width: 576px) {
+  .main-title {
+    font-size: 2.5rem;
+  }
+
+  .sub-title {
+    font-size: 1rem;
+  }
+
+  .member-photo {
+    width: 85%;
+    max-width: 200px;
+  }
+
+  .member-info .name {
+    font-size: 1.1rem;
+  }
+
+  .member-info .links {
+    font-size: 0.8rem;
+    line-height: 1.8;
+  }
+}
